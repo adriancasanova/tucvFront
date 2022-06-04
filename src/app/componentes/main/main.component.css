@@ -1,0 +1,32 @@
+body {
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    box-shadow: inset 30 30 5rem rgba(0, 0, 0, .5);
+  }
+  
+  
+  .mainLong {
+    margin-top: 100px !important;
+    max-width: 42em;
+   margin-left: auto; 
+   margin-right: auto; 
+} 
+/*
+@media (max-width: 992px) {
+  .mainLong {
+    max-width: 22em;
+    margin-left: 0%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainLong {
+    margin-left: 0%;
+  }
+} */
+
+  .btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}

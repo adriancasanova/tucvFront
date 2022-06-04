@@ -1,0 +1,59 @@
+<div class="container">
+ 
+ 
+<form
+class="custom-form"
+method=""         
+*ngIf="showAddTask"
+[formGroup]="formValue" 
+enctype="multipart/form-data"
+
+>
+<h1>Empecemos</h1> 
+
+<input
+  type="email"
+  formControlName="email"
+  placeholder="Tu email"
+  required="required"
+/>
+<p class="pad">* Agregue el motivo y el puesto para el cual le gustaria postularse.</p>
+<input
+  type="asunto"
+  formControlName="asunto"
+  placeholder="Este es el asunto de su email"
+  required="asunto"
+/>
+
+<textarea
+type="textarea"
+formControlName="cuerpoEmail"
+placeholder="Cuenta un poco sobre ti"
+required="required"
+></textarea>
+
+<input
+  type="file" 
+  formControlName="cv"
+  placeholder="Carga tu CV"
+  (change)="capturarFile($event)"
+ 
+  required="cv"
+/> 
+<div class="preview-img" *ngIf="previsualizacion"> 
+ <!--   <img  [src]="previsualizacion" alt="" class="tamañoPrevis"> -->
+ <img  [src]="" alt="" class="tamañoPrevis">
+  </div>
+<p>* Tu CV se enviara automaticamente a todas las agencias de empleo y empresas registradas en nuestra base de datos</p>
+<!--<button type="submit" (click)="sendFile()">Enviar</button> -->
+<button type="submit" [disabled]="loading" (click)="subirArchivo()" (click)="cerrar()">
+ <!-- {{(loading) ? 'Cargando.....' : 'Enviar'}}--> Enviar</button>
+
+</form>
+
+</div>
+
+
+
+
+

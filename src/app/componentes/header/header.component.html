@@ -1,0 +1,14 @@
+<header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">TuCV</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page"  routerLink="/home" > Home </a>  
+        <a class="nav-link logout" routerLink="/home" *ngIf="Logueado('/admin')" (click)="desloguear()"> Logout </a>  
+        <a class="nav-link" routerLink="/login" > Login </a>  
+        <a class="nav-link" routerLink="/registro">Registro</a>
+        <a class="nav-link" routerLink="/contacto">Contacto</a>        
+      </nav>
+    </div>   
+    
+</header>
+ 

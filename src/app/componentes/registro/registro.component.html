@@ -1,0 +1,113 @@
+<body class="d-flex h-100 text-center text-white bg-dark">    
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <app-header></app-header>
+    <div class="login">
+        <form
+          class="custom-form"
+          method=""         
+          [formGroup]="registerForms"
+        >
+          <h1>Registro</h1> 
+          <input
+          type="nombre"
+          formControlName="nombre"
+          placeholder="Nombre"
+          required="nombre"
+        />
+        <input
+        type="apellido"
+        formControlName="apellido"
+        placeholder="Apellido"
+        required="apellido"
+      />
+
+      <!------------Principio de la validacion------------>
+        
+      <input
+      type="email"
+      formControlName="email"
+      placeholder="Email"
+      required="required"
+      [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
+      class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    />
+
+   <!--Se muestra si hay un error al validar-->
+   <div *ngIf="Email?.errors && Email?.touched">
+    <p *ngIf="Email?.hasError('required')" class="text-secondary">
+      El email es requerido
+    </p>
+     <p *ngIf="Email?.hasError('email')" class="text-secondary">
+    El formato del email debe ser valido
+    </p>      
+    </div>
+    <!--Input password-->
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+      required="required"
+      [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+      class="form-control" id="exampleInputPassword1"
+    />
+  <!--  <input
+    type="password"
+    formControlName="password"
+    placeholder="Confirme su password"
+    required="required"
+    [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+    class="form-control" id="exampleInputPassword1"
+  /> -->
+<!--Se muestra si hay un error al validar-->
+<div *ngIf="Password?.errors && Password?.touched">
+<p *ngIf="Password?.hasError('required')" class="text-secondary">
+  El password es requerido
+</p>
+<p *ngIf="Password?.errors?.['minLength']" class="text-secondary">
+La contraseña debe tener al menos 8 caracteres
+</p>
+</div>
+
+<div *ngIf="Password?.errors && Password?.touched">
+  <p *ngIf="Password?.hasError('required')" class="text-secondary">
+    Las contraseñas no coinciden.
+  </p>
+ 
+  </div>
+
+       
+    <!----------------Fin de la validacion----------------->
+ <!--   <input
+    class="form-check checkboxUno"
+    type="checkbox"
+    formControlName="politicasDePrivacidad"   
+    required="politicasDePrivacidad"    
+  
+  /> <label class="labelUno"> <a href="">Política de Privacidad </a></label>
+  <input
+    class="form-check checkboxDos"
+    type="checkbox"
+    formControlName="terminosYCondiciones"
+    placeholder="Apellido"
+    required="terminosYCondiciones"    
+  />
+  <label class="labelDos"><a href="">Términos y Condiciones</a> </label>
+
+
+-->
+    
+         
+          <button type="submit" (click)="register()">Registro</button>
+        </form>
+      </div>
+      <app-footer></app-footer>
+        </div>
+
+
+
+      
+
+
+
+    </body>
+    

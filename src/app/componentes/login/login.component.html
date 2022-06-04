@@ -1,0 +1,107 @@
+
+<body class="d-flex h-100 text-center text-white bg-dark">    
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <app-header></app-header>
+  
+<div class="login">
+  
+    <form
+      class="custom-form"
+      method=""     
+      (ngSubmit)="login($event)"
+     [formGroup]="loginForm"
+    >
+      <h1>Login</h1> 
+      <h6 class="text-white">Antes de empezar debe iniciar sesion o registrarse</h6>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+        required="required"       
+      />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        required="required"
+      />
+   
+      <button type="submit">Login</button>
+      <h6 class="text-white">Aun no tienes una cuenta <a class="text-span" routerLink="/registro">Registro</a></h6>
+    </form>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+</body>
+
+
+
+
+
+
+<!-- ================================= pueba de validacion -->
+<!--
+  <body class="d-flex h-100 text-center text-white bg-dark">    
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <app-header></app-header>
+<div class="login">
+    <form
+      class="custom-form"
+      method=""     
+     [formGroup]="loginForm"
+    >
+      <h1>Login</h1> 
+      
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+        required="required"
+        [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
+        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      />  -->
+
+     <!--Se muestra si hay un error al validar
+     <div *ngIf="Email?.errors && Email?.touched">
+      <p *ngIf="Email?.hasError('required')" class="text-secondary">
+        El email es requerido
+      </p>
+       <p *ngIf="Email?.hasError('email')" class="text-secondary">
+      El formato del email debe ser valido
+      </p>      
+      </div> -->
+      <!--Input password
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        required="required"
+        [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+        class="form-control" id="exampleInputPassword1"
+      />-->
+   
+<!--Se muestra si hay un error al validar
+<div *ngIf="Password?.errors && Password?.touched">
+  <p *ngIf="Password?.hasError('required')" class="text-secondary">
+    El password es requerido
+  </p>
+ <p *ngIf="Password?.errors?.['minlength']" class="text-secondary">
+  La contraseña debe tener al menos 8 caracteres
+  </p>
+  
+        </div>
+-->
+
+<!--Fin del div de validacion
+
+
+      <button type="submit">Login</button>
+      <h6 class="text-white">Aun no tienes una cuenta <a class="text-span" routerLink="/registro">Registro</a></h6>
+    </form>
+  </div>
+  <app-footer></app-footer>
+</div>
+</body>
+
+-->

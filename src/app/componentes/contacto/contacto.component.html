@@ -1,0 +1,45 @@
+<body class="d-flex h-100 text-center text-white bg-dark">    
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <app-header></app-header>
+
+    <div class="login">
+        <form
+          class="custom-form"
+          method=""
+          [formGroup]="contactForms"
+        
+        >
+          <h1>Contacto</h1> 
+          <input
+          type="nombre"
+          formControlName="nombre"
+          placeholder="Nombre"
+          required="nombre"
+        />
+        <input
+        type="apellido"
+        formControlName="apellido"
+        placeholder="Apellido"
+        required="apellido"
+      />
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+            required="required"
+          />
+          <textarea
+            type="textarea"
+            formControlName="asunto"
+            placeholder="Deja tu comentario"
+            required="required"
+           ></textarea>
+       
+          <button type="submit" (click)="contacto()">Enviar</button>
+        </form>
+      </div>
+      <app-footer></app-footer>
+    </div>
+    
+    </body>
+    
